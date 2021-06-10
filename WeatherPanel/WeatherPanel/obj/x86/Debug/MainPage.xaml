@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="WeatherPanel.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeatherPanel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width ="3*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#FF2B66DE"/>
+        <Border Grid.Column ="1" Background="#FF1D4DB0"/>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#FF213F7C"/>
+
+        <StackPanel x:ConnectionId='2' Name ="PanelFirst"
+                    Grid.Column="1"
+                    Margin="40,10,0,0"
+                    VerticalAlignment="Center">
+
+            <TextBlock x:ConnectionId='7' Name="TodayTemperature"
+                     Text="Today - 64&#186;F" 
+                     FontSize="55" 
+                     Foreground="White"
+                     VerticalAlignment="Stretch"/>
+            
+            <TextBlock x:ConnectionId='8' Name="Weather"
+                   Text="Partially Cloudy"
+                   FontSize="55"
+                   Foreground="White"/>
+            
+            <TextBlock x:ConnectionId='9' Name="Precipitation"
+                   Text="Precipitation = 25%"
+                   FontSize="55" 
+                   Foreground="White"/>
+            
+         </StackPanel>
+        <StackPanel x:ConnectionId='3' Name="PanelSecond"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <TextBlock x:ConnectionId='4' Name="High"
+                       Text="High: 66&#186;F"
+                       FontSize="50"
+                       Foreground="White"
+                       Margin="10,0,20,0"
+                       />
+            <TextBlock x:ConnectionId='5' Name="Low"
+                       Text="Low: 43&#186;F"
+                       FontSize="50"
+                       Foreground="White"
+                       Margin="10,0,20,0"
+                       />
+            <TextBlock x:ConnectionId='6' Name="Feelslike"
+                       Text="Feels like: 63&#186;"
+                       FontSize="50"
+                       Foreground="White"
+                       Margin="10,0,20,0"/>
+        </StackPanel>
+        <Image Margin="40" Source="Assets/partially-cloudy.png"/>
+
+    </Grid>
+</Page>
+
